@@ -54,10 +54,15 @@ checkButton.addEventListener('click', () => {
       newScoreText(score);
     } else {
       displayMessage('🤯 You lost the game!');
+
       newScoreText(0);
     }
   }
 });
+
+const cool = 123;
+
+let hi = 'hello';
 //Reset game (Again button)
 againButton.addEventListener('click', () => {
   const guessInput = document.querySelector('.guess');
