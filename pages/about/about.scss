@@ -1,0 +1,10 @@
+@use '../src/lib.scss' as *;
+
+.test2 {
+  color: $text-color-secondary;
+}
+.testing {
+  background-color: $background-div-color;
+  width: 2rem;
+  height: 2rem;
+}

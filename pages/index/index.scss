@@ -1,3 +1,5 @@
+@use '../src/lib.scss' as *;
+
 .test {
-    color: blue;
+  color: $red-color;
 }

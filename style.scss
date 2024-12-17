@@ -1,2 +1,8 @@
+@use './pages/src/lib.scss' as *;
 @use './pages/index/index.scss';
-@use './pages/comingMovies/comingMovies.scss';
+@use './pages/kids/kids.scss';
+@use './pages/about/about.scss';
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
