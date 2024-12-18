@@ -140,7 +140,8 @@
     "Skådespelare": ["Matthew Broderick", "James Earl Jones", "Jeremy Irons"],
     "Språk": "Engelska",
     "Längd": 88,
-    "Bild": "https://example.com/images/lion-king.jpg"
+    "Bild": "https://example.com/images/lion-king.jpg",
+    "Label": "Kommande"
   },
   {
     "Titel": "Black Widow",
@@ -151,7 +152,8 @@
     "Skådespelare": ["Scarlett Johansson", "Florence Pugh", "David Harbour"],
     "Språk": "Engelska",
     "Längd": 134,
-    "Bild": "https://example.com/images/black-widow.jpg"
+    "Bild": "https://example.com/images/black-widow.jpg",
+    "Label": "Kommande"
   },
   {
     "Titel": "Moana",
@@ -162,6 +164,7 @@
     "Skådespelare": ["Auli'i Cravalho", "Dwayne Johnson", "Rachel House"],
     "Språk": "Engelska",
     "Längd": 107,
-    "Bild": "https://example.com/images/moana.jpg"
+    "Bild": "https://example.com/images/moana.jpg",
+    "Label": "Kommande"
   }
 ]
