@@ -1,5 +1,6 @@
 [
   {
+    "ID": 1,
     "Titel": "Inception",
     "Genre": "Sci-Fi",
     "RekommenderadAlder": 13,
@@ -8,9 +9,11 @@
     "Skådespelare": ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Elliot Page"],
     "Språk": "Engelska",
     "Längd": 148,
-    "Bild": "https://example.com/images/inception.jpg"
+    "Bild": "https://example.com/images/inception.jpg",
+    "Label": "Visas nu"
   },
   {
+    "ID": 2,
     "Titel": "Parasite",
     "Genre": "Thriller",
     "RekommenderadAlder": 15,
@@ -19,9 +22,11 @@
     "Skådespelare": ["Song Kang-ho", "Lee Sun-kyun", "Cho Yeo-jeong"],
     "Språk": "Koreanska",
     "Längd": 132,
-    "Bild": "https://example.com/images/parasite.jpg"
+    "Bild": "https://example.com/images/parasite.jpg",
+    "Label": "Visas nu"
   },
   {
+    "ID": 3,
     "Titel": "The Dark Knight",
     "Genre": "Action",
     "RekommenderadAlder": 15,
@@ -30,9 +35,11 @@
     "Skådespelare": ["Christian Bale", "Heath Ledger", "Aaron Eckhart"],
     "Språk": "Engelska",
     "Längd": 152,
-    "Bild": "https://example.com/images/dark-knight.jpg"
+    "Bild": "https://example.com/images/dark-knight.jpg",
+    "Label": "Visas nu"
   },
   {
+    "ID": 4,
     "Titel": "Interstellar",
     "Genre": "Sci-Fi",
     "RekommenderadAlder": 12,
@@ -41,9 +48,11 @@
     "Skådespelare": ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain"],
     "Språk": "Engelska",
     "Längd": 169,
-    "Bild": "https://example.com/images/interstellar.jpg"
+    "Bild": "https://example.com/images/interstellar.jpg",
+    "Label": "Visas nu"
   },
   {
+    "ID": 5,
     "Titel": "Spirited Away",
     "Genre": "Animation",
     "RekommenderadAlder": 7,
@@ -52,9 +61,11 @@
     "Skådespelare": ["Rumi Hiiragi", "Miyu Irino", "Mari Natsuki"],
     "Språk": "Japanska",
     "Längd": 125,
-    "Bild": "https://example.com/images/spirited-away.jpg"
+    "Bild": "https://example.com/images/spirited-away.jpg",
+    "Label": "Visas nu"
   },
   {
+    "ID": 6,
     "Titel": "The Godfather",
     "Genre": "Drama",
     "RekommenderadAlder": 15,
@@ -63,9 +74,11 @@
     "Skådespelare": ["Marlon Brando", "Al Pacino", "James Caan"],
     "Språk": "Engelska",
     "Längd": 175,
-    "Bild": "https://example.com/images/godfather.jpg"
+    "Bild": "https://example.com/images/godfather.jpg",
+    "Label": "Kommande"
   },
   {
+    "ID": 7,
     "Titel": "Frozen",
     "Genre": "Animation",
     "RekommenderadAlder": 0,
@@ -74,9 +87,11 @@
     "Skådespelare": ["Kristen Bell", "Idina Menzel", "Josh Gad"],
     "Språk": "Engelska",
     "Längd": 102,
-    "Bild": "https://example.com/images/frozen.jpg"
+    "Bild": "https://example.com/images/frozen.jpg",
+    "Label": "Visas nu"
   },
   {
+    "ID": 8,
     "Titel": "Joker",
     "Genre": "Drama",
     "RekommenderadAlder": 15,
@@ -85,9 +100,11 @@
     "Skådespelare": ["Joaquin Phoenix", "Robert De Niro", "Zazie Beetz"],
     "Språk": "Engelska",
     "Längd": 122,
-    "Bild": "https://example.com/images/joker.jpg"
+    "Bild": "https://example.com/images/joker.jpg",
+    "Label": "Visas nu"
   },
   {
+    "ID": 9,
     "Titel": "Tenet",
     "Genre": "Action",
     "RekommenderadAlder": 13,
@@ -96,9 +113,11 @@
     "Skådespelare": ["John David Washington", "Robert Pattinson", "Elizabeth Debicki"],
     "Språk": "Engelska",
     "Längd": 150,
-    "Bild": "https://example.com/images/tenet.jpg"
+    "Bild": "https://example.com/images/tenet.jpg",
+    "Label": "Kommande"
   },
   {
+    "ID": 10,
     "Titel": "Soul",
     "Genre": "Animation",
     "RekommenderadAlder": 7,
@@ -107,9 +126,11 @@
     "Skådespelare": ["Jamie Foxx", "Tina Fey", "Graham Norton"],
     "Språk": "Engelska",
     "Längd": 100,
-    "Bild": "https://example.com/images/soul.jpg"
+    "Bild": "https://example.com/images/soul.jpg",
+    "Label": "Kommande"
   },
   {
+    "ID": 11,
     "Titel": "Avengers: Endgame",
     "Genre": "Action",
     "RekommenderadAlder": 13,
@@ -118,9 +139,11 @@
     "Skådespelare": ["Robert Downey Jr.", "Chris Evans", "Scarlett Johansson"],
     "Språk": "Engelska",
     "Längd": 181,
-    "Bild": "https://example.com/images/endgame.jpg"
+    "Bild": "https://example.com/images/endgame.jpg",
+    "Label": "Visas nu"
   },
   {
+    "ID": 12,
     "Titel": "Dune",
     "Genre": "Sci-Fi",
     "RekommenderadAlder": 13,
@@ -129,9 +152,11 @@
     "Skådespelare": ["Timothée Chalamet", "Rebecca Ferguson", "Oscar Isaac"],
     "Språk": "Engelska",
     "Längd": 155,
-    "Bild": "https://example.com/images/dune.jpg"
+    "Bild": "https://example.com/images/dune.jpg",
+    "Label": "Visas nu"
   },
   {
+    "ID": 13,
     "Titel": "The Lion King",
     "Genre": "Animation",
     "RekommenderadAlder": 7,
@@ -144,6 +169,7 @@
     "Label": "Kommande"
   },
   {
+    "ID": 14,
     "Titel": "Black Widow",
     "Genre": "Action",
     "RekommenderadAlder": 13,
@@ -156,6 +182,7 @@
     "Label": "Kommande"
   },
   {
+    "ID": 15,
     "Titel": "Moana",
     "Genre": "Animation",
     "RekommenderadAlder": 0,
@@ -165,6 +192,6 @@
     "Språk": "Engelska",
     "Längd": 107,
     "Bild": "https://example.com/images/moana.jpg",
-    "Label": "Kommande"
+    "Label": "Visas nu"
   }
 ]
