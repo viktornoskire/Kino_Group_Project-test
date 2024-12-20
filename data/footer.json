@@ -1,0 +1,54 @@
+{
+  "footer": {
+    "logo": "Kino_Group_Project/pages/img/Kino - koncept.png",
+    "text": "Kino Bio",
+    "sections": [
+      {
+        "title": "Kontakta oss",
+        "links": [
+          {
+            "mail": "kinosandviken@hotmail.com",
+            "phonenumber": "026-290066"
+          }
+        ]
+      },
+      {
+        "title": "Sociala medier",
+        "links": [
+          {
+            "name": "Följ oss på Instagram",
+            "url": "#instagram",
+            "icon": "Kino_Group_Project/pages/img/instagramIcon.png"
+          },
+          {
+            "name": "Följ oss på Facebook",
+            "url": "#facebook",
+            "icon": "Kino_Group_Project/pages/img/facebookIcon.png"
+          },
+          {
+            "name": "Följ oss på TikTok",
+            "url": "#tiktok",
+            "icon": "Kino_Group_Project/pages/img/tiktokIcon.png"
+          }
+        ]
+      },
+      {
+        "title": "Adress",
+        "links": [
+          {
+            "name": "Kontakta oss",
+            "url": "#contact"
+          },
+          {
+            "name": "Support",
+            "url": "#support"
+          },
+          {
+            "name": "FAQ",
+            "url": "#faq"
+          }
+        ]
+      }
+    ]
+  }
+}
