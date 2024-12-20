@@ -10,8 +10,20 @@ async function loadMovies() {
   movies.forEach((movie) => {
     const movieCard = document.createElement('div');
     movieCard.classList.add('movie-card');
-    movieCard.textContent = movie.Titel;
     movieContainer.appendChild(movieCard);
+
+    const movieImg = document.createElement('img');
+    movieImg.src = movie.Bild;
+    movieImg.alt = `Bild för ${movie.Titel}`;
+    movieCard.appendChild(movieImg);
+
+    const movieTitle = document.createElement('h2');
+    movieTitle.textContent = movie.Titel;
+    movieCard.appendChild(movieTitle);
+
+    const movieGenre = document.createElement('p');
+    movieGenre.textContent = movie.Genre;
+    movieCard.appendChild(movieGenre);
   });
 }
 
