@@ -1,0 +1,48 @@
+{
+  "footer": {
+    "logo": "Kino_Group_Project/pages/img/Kino - koncept.png",
+    "text": "Kino Bio",
+    "sections": [
+      {
+        "title": "Kontakta oss",
+        "contact": [
+          {
+            "mail": "kinosandviken@kino.nu",
+            "phoneNumber": "026-290066"
+          }
+        ]
+      },
+      {
+        "title": "Sociala medier",
+        "links": [
+          {
+            "icon": "Kino_Group_Project/pages/img/instagramIcon.png",
+            "text": "Följ oss på Instagram",
+            "url": "#instagram"
+          },
+          {
+            "icon": "Kino_Group_Project/pages/img/facebookIcon.png",
+            "name": "Följ oss på Facebook",
+            "url": "#facebook"
+          },
+          {
+            "icon": "Kino_Group_Project/pages/img/tiktokIcon.png",
+            "name": "Följ oss på TikTok",
+            "url": "#tiktok"
+          }
+        ]
+      },
+      {
+        "title": "Adress",
+        "adress": [
+          {
+            "street": "Smassensväg 102",
+            "town": "811 62 Sandviken",
+            "findUs": "Hitta hit",
+            "url": "#findUs"
+          }
+        ]
+      }
+    ]
+  }
+}
