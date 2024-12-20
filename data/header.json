@@ -1,11 +1,11 @@
 {
   "header": {
     "mainHeader": {
-      "logo": "Kino_Group_Project/pages/img/Kino - koncept.png",
+      "logo": "pages/img/Kino - koncept.png",
       "brandName": "Kino Bio"
     },
     "hamburgerMenu": {
-      "menuLogo": "Kino_Group_Project/pages/img/Kino - koncept.png",
+      "menuLogo": "pages/img/Kino - koncept.png",
       "menuLinks": [
         {
           "text": "Aktuella filmer"
