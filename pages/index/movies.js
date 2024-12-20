@@ -30,13 +30,7 @@ async function loadHeadline() {
     console.log('Headline data:', data);
 
     const headerElement = document.querySelector('.movie-headline');
-    if (!headerElement) {
-      console.error('Elementet med klassen "main-h1" hittades inte i HTML.');
-      return;
-    }
-
     headerElement.textContent = data.HeadlineText;
-    console.log('Rubrik uppdaterad med:', data.HeadlineText);
   } catch (error) {
     console.error('Unable to load headline:', error);
   }
