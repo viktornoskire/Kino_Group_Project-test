@@ -1,0 +1,34 @@
+{
+  "header": {
+    "mainHeader": {
+      "logo": "pages/img/Kino - koncept.png",
+      "brandName": "Kino Bio"
+    },
+    "hamburgerMenu": {
+      "menuLogo": "pages/img/Kino - koncept.png",
+      "menuLinks": [
+        {
+          "text": "Aktuella filmer"
+        },
+        {
+          "text": "Kommande filmer"
+        },
+        {
+          "text": "Barnbio"
+        },
+        {
+          "text": "Bioupplevelser"
+        },
+        {
+          "text": "Barnkalas"
+        },
+        {
+          "text": "Medlem"
+        },
+        {
+          "text": "Om oss"
+        }
+      ]
+    }
+  }
+}
