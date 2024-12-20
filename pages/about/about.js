@@ -1,6 +1,12 @@
 createSections();
 
 function createSections() {
+  //Headline
+  const headline = document.querySelector('.about-header');
+  const mainheading = document.createElement('h1');
+  mainheading.textContent = 'Title of page';
+  headline.appendChild(mainheading);
+
   //Sektion 1
   const section1 = document.querySelector('.section-1');
   const heading1 = document.createElement('h2');
