@@ -5,7 +5,7 @@
     "sections": [
       {
         "title": "Kontakta oss",
-        "links": [
+        "contact": [
           {
             "mail": "kinosandviken@kino.nu",
             "phoneNumber": "026-290066"
@@ -34,7 +34,7 @@
       },
       {
         "title": "Adress",
-        "links": [
+        "adress": [
           {
             "street": "Smassensväg 102",
             "town": "811 62 Sandviken"
