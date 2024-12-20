@@ -7,8 +7,8 @@
         "title": "Kontakta oss",
         "links": [
           {
-            "mail": "kinosandviken@hotmail.com",
-            "phonenumber": "026-290066"
+            "mail": "kinosandviken@kino.nu",
+            "phoneNumber": "026-290066"
           }
         ]
       },
@@ -16,19 +16,19 @@
         "title": "Sociala medier",
         "links": [
           {
-            "name": "Följ oss på Instagram",
-            "url": "#instagram",
-            "icon": "Kino_Group_Project/pages/img/instagramIcon.png"
+            "icon": "Kino_Group_Project/pages/img/instagramIcon.png",
+            "text": "Följ oss på Instagram",
+            "url": "#instagram"
           },
           {
+            "icon": "Kino_Group_Project/pages/img/facebookIcon.png",
             "name": "Följ oss på Facebook",
-            "url": "#facebook",
-            "icon": "Kino_Group_Project/pages/img/facebookIcon.png"
+            "url": "#facebook"
           },
           {
+            "icon": "Kino_Group_Project/pages/img/tiktokIcon.png",
             "name": "Följ oss på TikTok",
-            "url": "#tiktok",
-            "icon": "Kino_Group_Project/pages/img/tiktokIcon.png"
+            "url": "#tiktok"
           }
         ]
       },
@@ -36,16 +36,8 @@
         "title": "Adress",
         "links": [
           {
-            "name": "Kontakta oss",
-            "url": "#contact"
-          },
-          {
-            "name": "Support",
-            "url": "#support"
-          },
-          {
-            "name": "FAQ",
-            "url": "#faq"
+            "street": "Smassensväg 102",
+            "town": "811 62 Sandviken"
           }
         ]
       }
