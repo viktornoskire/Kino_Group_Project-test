@@ -91,19 +91,6 @@
     "Label": "Visas nu"
   },
   {
-    "ID": 8,
-    "Titel": "Joker",
-    "Genre": "Drama",
-    "RekommenderadAlder": 15,
-    "Rating": 8.4,
-    "Beskrivning": "Berättelsen om Jokerns ursprung i Gotham City.",
-    "Skådespelare": ["Joaquin Phoenix", "Robert De Niro", "Zazie Beetz"],
-    "Språk": "Engelska",
-    "Längd": 122,
-    "Bild": "pages/img/movieimg.png",
-    "Label": "Visas nu"
-  },
-  {
     "ID": 9,
     "Titel": "Tenet",
     "Genre": "Action",
@@ -115,6 +102,19 @@
     "Längd": 150,
     "Bild": "pages/img/movieimg.png",
     "Label": "Kommande"
+  },
+  {
+    "ID": 8,
+    "Titel": "Joker",
+    "Genre": "Drama",
+    "RekommenderadAlder": 15,
+    "Rating": 8.4,
+    "Beskrivning": "Berättelsen om Jokerns ursprung i Gotham City.",
+    "Skådespelare": ["Joaquin Phoenix", "Robert De Niro", "Zazie Beetz"],
+    "Språk": "Engelska",
+    "Längd": 122,
+    "Bild": "pages/img/movieimg.png",
+    "Label": "Visas nu"
   },
   {
     "ID": 10,
