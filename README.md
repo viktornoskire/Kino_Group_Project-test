@@ -7,6 +7,6 @@ Quick guide for the project.
 1. npm install.
 2. npm install eslist@latest --save-dev.
 
- ## Commands that are good to know.
+## Commands that are good to know.
 
- 1. Start liveserver: npm run dev.
+1.  Start liveserver: npm run dev.
