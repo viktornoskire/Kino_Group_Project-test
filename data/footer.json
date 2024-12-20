@@ -37,7 +37,9 @@
         "adress": [
           {
             "street": "Smassensväg 102",
-            "town": "811 62 Sandviken"
+            "town": "811 62 Sandviken",
+            "findUs": "Hitta hit",
+            "url": "#findUs"
           }
         ]
       }
