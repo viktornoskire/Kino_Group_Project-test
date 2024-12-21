@@ -5,7 +5,7 @@
       "brandName": "Kino Bio"
     },
     "hamburgerMenu": {
-      "menuLogo": "pages/img/Kino - koncept.png",
+      "menuLogo": "/pages/img/kinoLogo.png",
       "menuLinks": [
         {
           "text": "Aktuella filmer"

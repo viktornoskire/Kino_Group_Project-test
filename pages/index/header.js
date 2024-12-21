@@ -17,17 +17,27 @@ export function createNavigation(headerData) {
   const leftSection = document.createElement('div');
   leftSection.className = 'nav-left';
 
+  const logoLink = document.createElement('a');
+  logoLink.href = '/index.html';
+
   const logo = document.createElement('img');
   logo.src = headerData.header.mainHeader.logo;
   logo.alt = 'Kino Bio Logo';
   logo.className = 'nav-logo';
 
+  logoLink.appendChild(logo);
+
+  const brandNameLink = document.createElement('a');
+  brandNameLink.href = '/index.html';
+
   const brandName = document.createElement('span');
   brandName.className = 'brand-name';
   brandName.textContent = headerData.header.mainHeader.brandName;
 
-  leftSection.appendChild(logo);
-  leftSection.appendChild(brandName);
+  brandNameLink.appendChild(brandName);
+
+  leftSection.appendChild(logoLink);
+  leftSection.appendChild(brandNameLink);
   //the right section of the navigation meny with the hamburger menu, and its overlay on click.
   const rightSection = document.createElement('div');
   rightSection.className = 'nav-right';
@@ -39,13 +49,35 @@ export function createNavigation(headerData) {
   const menuOverlay = document.createElement('div');
   menuOverlay.className = 'menu-overlay';
 
+  const overlayLogoContainer = document.createElement('div');
+  overlayLogoContainer.className = 'overlay-logo';
+
+  const overlayLogo = document.createElement('img');
+  overlayLogo.src = headerData.header.hamburgerMenu.menuLogo;
+  overlayLogo.alt = 'Kino Bio Logo';
+  overlayLogo.className = 'overlay-logo';
+
+  overlayLogoContainer.appendChild(overlayLogo);
+  menuOverlay.appendChild(overlayLogoContainer);
+
   const menuLinks = document.createElement('ul');
   menuLinks.className = 'menu-links';
   //This loops through each link from the JSON file, and creates <li> elements for each link. Also adds the correct text.
   headerData.header.hamburgerMenu.menuLinks.forEach((link) => {
     const menuItem = document.createElement('li');
     const menuLink = document.createElement('a');
-    menuLink.href = '#';
+    //Using a switch that adds the href attribute depending on the link text. This can be updated when we get more webpages online.
+    switch (link.text) {
+      case 'Om oss':
+        menuLink.href = '/pages/about/about.html';
+        break;
+      case 'Barnkalas':
+        menuLink.href = '/pages/about/kids.html';
+        break;
+      default:
+        menuLink.href = '#';
+    }
+
     menuLink.textContent = link.text;
     menuItem.appendChild(menuLink);
     menuLinks.appendChild(menuItem);
