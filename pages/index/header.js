@@ -11,7 +11,7 @@ export function createNavigation(headerData) {
 
   //Creates a nav element
   const nav = document.createElement('nav');
-  nav.className = 'main-navigation';
+  nav.className = 'main-nav';
 
   //left side of navigation with logo and name
   const leftSection = document.createElement('div');
