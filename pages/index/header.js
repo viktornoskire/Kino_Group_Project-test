@@ -48,6 +48,7 @@ export function createNavigation(headerData) {
 
   const menuOverlay = document.createElement('div');
   menuOverlay.className = 'menu-overlay';
+  menuOverlay.style.display = 'none'; //Added this just so the hamburger menu i closed by default. This will probably be handled by SCSS in the future.
 
   const overlayLogoContainer = document.createElement('div');
   overlayLogoContainer.className = 'overlay-logo';
