@@ -4,7 +4,6 @@ export async function fetchHeaderData() {
   console.log(headerData);
   return headerData;
 }
-
 export function createNavigation(headerData) {
   const navigationContainer = document.querySelector('#navigation-menu');
 
@@ -35,11 +34,31 @@ export function createNavigation(headerData) {
   hamburgerBtn.className = 'hamburger-btn';
   hamburgerBtn.innerHTML = '<i class="fas fa-bars"></i>';
 
-  rightSection.appendChild(hamburgerBtn);
+  const menuOverlay = document.createElement('div');
+  menuOverlay.className = 'menu-overlay';
 
+  const menuLinks = document.createElement('ul');
+  menuLinks.className = 'menu-links';
+
+  headerData.header.hamburgerMenu.menuLinks.forEach((link) => {
+    const menuItem = document.createElement('li');
+    const menuLink = document.createElement('a');
+    menuLink.href = '#';
+    menuLink.textContent = link.text;
+    menuItem.appendChild(menuLink);
+    menuLinks.appendChild(menuItem);
+  });
+
+  menuOverlay.appendChild(menuLinks);
+
+  hamburgerBtn.addEventListener('click', () => {
+    menuOverlay.style.display = menuOverlay.style.display === 'none' ? 'block' : 'none';
+  });
+  rightSection.appendChild(hamburgerBtn);
   nav.appendChild(leftSection);
   nav.appendChild(rightSection);
   navigationContainer.appendChild(nav);
+  navigationContainer.appendChild(menuOverlay);
 }
 
 async function initHeader() {
