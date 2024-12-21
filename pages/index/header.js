@@ -1,7 +1,10 @@
-async function loadHeader() {
+export async function fetchHeaderData() {
   const response = await fetch('../../data/header.json');
-  const data = await response.json();
-  console.log(data);
+  const headerData = await response.json();
+  console.log(headerData);
+  return headerData;
 }
 
-loadHeader();
+export function createNavigation(headerData) {
+  const navigationContainer = document.querySelector('#navigation-menu');
+}
