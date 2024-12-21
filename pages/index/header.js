@@ -7,6 +7,44 @@ export async function fetchHeaderData() {
 
 export function createNavigation(headerData) {
   const navigationContainer = document.querySelector('#navigation-menu');
+
+  //Creates a nav element
+  const nav = document.createElement('nav');
+  nav.className = 'main-navigation';
+
+  //left side of navigation with logo and name
+  const leftSection = document.createElement('div');
+  leftSection.className = 'nav-left';
+
+  const logo = document.createElement('img');
+  logo.src = headerData.header.mainHeader.logo;
+  logo.alt = 'Kino Bio Logo';
+  logo.className = 'nav-logo';
+
+  const brandName = document.createElement('span');
+  brandName.className = 'brand-name';
+  brandName.textContent = headerData.header.mainHeader.brandName;
+
+  leftSection.appendChild(logo);
+  leftSection.appendChild(brandName);
+
+  const rightSection = document.createElement('div');
+  rightSection.className = 'nav-right';
+
+  const hamburgerBtn = document.createElement('button');
+  hamburgerBtn.className = 'hamburger-btn';
+  hamburgerBtn.innerHTML = '<i class="fas fa-bars"></i>';
+
+  rightSection.appendChild(hamburgerBtn);
+
+  nav.appendChild(leftSection);
+  nav.appendChild(rightSection);
+  navigationContainer.appendChild(nav);
 }
 
-fetchHeaderData();
+async function initHeader() {
+  const headerData = await fetchHeaderData();
+  createNavigation(headerData);
+}
+
+initHeader();
