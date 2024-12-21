@@ -8,3 +8,5 @@ export async function fetchHeaderData() {
 export function createNavigation(headerData) {
   const navigationContainer = document.querySelector('#navigation-menu');
 }
+
+fetchHeaderData();
