@@ -1,7 +1,7 @@
 {
   "header": {
     "mainHeader": {
-      "logo": "pages/img/kinoLogo.png",
+      "logo": "/pages/img/kinoLogo.png",
       "brandName": "Kino Bio"
     },
     "hamburgerMenu": {

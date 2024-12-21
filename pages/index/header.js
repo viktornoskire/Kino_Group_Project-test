@@ -1,9 +1,11 @@
+//Getting the JSON file header.json and its data.
 export async function fetchHeaderData() {
   const response = await fetch('../../data/header.json');
   const headerData = await response.json();
   console.log(headerData);
   return headerData;
 }
+//This function uses the data and creates the elements for the header.
 export function createNavigation(headerData) {
   const navigationContainer = document.querySelector('#navigation-menu');
 
@@ -26,7 +28,7 @@ export function createNavigation(headerData) {
 
   leftSection.appendChild(logo);
   leftSection.appendChild(brandName);
-
+  //the right section of the navigation meny with the hamburger menu, and its overlay on click.
   const rightSection = document.createElement('div');
   rightSection.className = 'nav-right';
 
@@ -39,7 +41,7 @@ export function createNavigation(headerData) {
 
   const menuLinks = document.createElement('ul');
   menuLinks.className = 'menu-links';
-
+  //This loops through each link from the JSON file, and creates <li> elements for each link. Also adds the correct text.
   headerData.header.hamburgerMenu.menuLinks.forEach((link) => {
     const menuItem = document.createElement('li');
     const menuLink = document.createElement('a');
@@ -50,20 +52,19 @@ export function createNavigation(headerData) {
   });
 
   menuOverlay.appendChild(menuLinks);
-
+  //eventlistner for clicks on the hamburgermenu, this might change depending on styling down the line
   hamburgerBtn.addEventListener('click', () => {
     menuOverlay.style.display = menuOverlay.style.display === 'none' ? 'block' : 'none';
   });
+  //appending the different elements thats been created above.
   rightSection.appendChild(hamburgerBtn);
   nav.appendChild(leftSection);
   nav.appendChild(rightSection);
   navigationContainer.appendChild(nav);
   navigationContainer.appendChild(menuOverlay);
 }
-
-async function initHeader() {
+//
+export async function initHeader() {
   const headerData = await fetchHeaderData();
   createNavigation(headerData);
 }
-
-initHeader();
