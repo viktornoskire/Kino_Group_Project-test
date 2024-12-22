@@ -1,30 +1,37 @@
-async function fetchAboutPageData() {
+async function fetchAboutJson() {
   const res = await fetch('../../data/about.json');
   const data = await res.json();
   return {
+    mainHeadline: data.aboutUs,
     headline: data.headline,
     aboutPage: data.aboutPage,
   };
 }
 
-async function updateDOMWithAboutPageData() {
-  const { headline, aboutPage } = await fetchAboutPageData();
+async function updateDomWithAboutJson() {
+  const { mainHeadline, headline, aboutPage } = await fetchAboutJson();
 
-  if (aboutPage && headline) {
-    createSections(aboutPage, headline);
+  if (mainHeadline && headline && aboutPage) {
+    createSections(aboutPage, headline, mainHeadline);
   }
 }
 
-function createSections(aboutData, pageHeadline) {
+function createSections(aboutData, pageHeadline, mainHeadline) {
+  // Main headline
+  const mainHeadlineElement = document.querySelector('.about-main-header');
+  const mainHeading = document.createElement('h1');
+  mainHeading.textContent = mainHeadline;
+  mainHeadlineElement.appendChild(mainHeading);
+
   // Headline
   const headlineElement = document.querySelector('.about-header');
-  const mainheading = document.createElement('h1');
-  mainheading.textContent = pageHeadline;
-  headlineElement.appendChild(mainheading);
+  const heading = document.createElement('h2');
+  heading.textContent = pageHeadline;
+  headlineElement.appendChild(heading);
 
   // Sektion 1
   const section1 = document.querySelector('.section-1');
-  const heading1 = document.createElement('h2');
+  const heading1 = document.createElement('h3');
   heading1.textContent = aboutData[0].section;
   const content1 = document.createElement('p');
   content1.textContent = aboutData[0].content;
@@ -33,7 +40,7 @@ function createSections(aboutData, pageHeadline) {
 
   // Sektion 2
   const section2 = document.querySelector('.section-2');
-  const heading2 = document.createElement('h2');
+  const heading2 = document.createElement('h3');
   heading2.textContent = aboutData[1].section;
   const content2 = document.createElement('p');
   content2.textContent = aboutData[1].content;
@@ -42,7 +49,7 @@ function createSections(aboutData, pageHeadline) {
 
   // Sektion 3
   const section3 = document.querySelector('.section-3');
-  const heading3 = document.createElement('h2');
+  const heading3 = document.createElement('h3');
   heading3.textContent = aboutData[2].section;
   const content3 = document.createElement('p');
   content3.textContent = aboutData[2].content;
@@ -51,7 +58,7 @@ function createSections(aboutData, pageHeadline) {
 
   // Sektion 4
   const section4 = document.querySelector('.section-4');
-  const heading4 = document.createElement('h2');
+  const heading4 = document.createElement('h3');
   heading4.textContent = aboutData[3].section;
   const content4 = document.createElement('p');
   content4.textContent = aboutData[3].content;
@@ -59,4 +66,4 @@ function createSections(aboutData, pageHeadline) {
   section4.appendChild(content4);
 }
 
-updateDOMWithAboutPageData();
+updateDomWithAboutJson();
