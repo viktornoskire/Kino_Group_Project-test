@@ -1,0 +1,47 @@
+{
+  "openButton": "pages/img/QnAOpen.png",
+  "closeButton": "pages/img/QnAClose.png",
+  "titles": {
+    "1": "Vanliga frågor",
+    "2": "Kort om biografen",
+    "3": "Tillgänglighet",
+    "4": "Öppettider"
+  },
+  "openList": [
+    {
+      "dag": "Lördag",
+      "datum": "14/12",
+      "tid": "14:30 - 21:00"
+    },
+    {
+      "dag": "Söndag",
+      "datum": "15/12",
+      "tid": "14:30 - 21:00"
+    },
+    {
+      "dag": "Måndag",
+      "datum": "16/12",
+      "tid": "14:30 - 20:00"
+    },
+    {
+      "dag": "Tisdag",
+      "datum": "17/12",
+      "tid": "14:30 - 21:30"
+    },
+    {
+      "dag": "Onsdag",
+      "datum": "18/12",
+      "tid": "Stängt"
+    },
+    {
+      "dag": "Torsdag",
+      "datum": "19/12",
+      "tid": "14:30 - 21:00"
+    },
+    {
+      "dag": "Fredag",
+      "datum": "20/12",
+      "tid": "14:00 - 22:00"
+    }
+  ]
+}
