@@ -22,7 +22,7 @@ function createNavigation(headerData) {
 
   const logo = document.createElement('img');
   logo.src = headerData.header.mainHeader.logo;
-  logo.alt = 'Kino Bio Logo';
+  logo.alt = `Picture of ${headerData.header.mainHeader.brandName} logo`;
   logo.className = 'nav-logo';
 
   logoLink.appendChild(logo);
@@ -50,6 +50,9 @@ function createNavigation(headerData) {
   menuOverlay.className = 'menu-overlay';
   menuOverlay.style.display = 'none'; //Added this just so the hamburger menu i closed by default. This will probably be handled by SCSS in the future.
 
+  const overlayBlur = document.createElement('div');
+  overlayBlur.className = 'overlay-blur';
+
   const overlayLogoContainer = document.createElement('div');
   overlayLogoContainer.className = 'overlay-logo';
 
@@ -60,7 +63,7 @@ function createNavigation(headerData) {
 
   const overlayLogo = document.createElement('img');
   overlayLogo.src = headerData.header.hamburgerMenu.menuLogo;
-  overlayLogo.alt = 'Kino Bio Logo';
+  overlayLogo.alt = `Picture of ${headerData.header.mainHeader.brandName} logo`;
   overlayLogo.className = 'overlay-logo';
 
   overlayLogoContainer.appendChild(overlayLogo);
@@ -78,7 +81,7 @@ function createNavigation(headerData) {
         menuLink.href = '/pages/about/about.html';
         break;
       case 'Barnkalas':
-        menuLink.href = '/pages/about/kids.html';
+        menuLink.href = '/pages/kids/kids.html';
         break;
       default:
         menuLink.href = '#';
@@ -93,10 +96,17 @@ function createNavigation(headerData) {
   //eventlistner for clicks on the hamburgermenu, this might change depending on styling down the line
   hamburgerBtn.addEventListener('click', () => {
     menuOverlay.style.display = 'block';
+    overlayBlur.classList.add('active');
   });
 
   closeBtn.addEventListener('click', () => {
     menuOverlay.style.display = 'none';
+    overlayBlur.classList.remove('active');
+  });
+
+  overlayBlur.addEventListener('click', () => {
+    menuOverlay.style.display = 'none';
+    overlayBlur.classList.remove('active');
   });
   //appending the different elements thats been created above.
   rightSection.appendChild(hamburgerBtn);
@@ -104,6 +114,7 @@ function createNavigation(headerData) {
   nav.appendChild(rightSection);
   navigationContainer.appendChild(nav);
   navigationContainer.appendChild(menuOverlay);
+  navigationContainer.appendChild(overlayBlur);
 }
 //
 export async function initHeader() {
