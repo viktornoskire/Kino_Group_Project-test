@@ -22,6 +22,13 @@
     justify-content: flex-end;
     margin-right: 1rem;
   }
+  a {
+    text-decoration: none;
+    .brand-name {
+      color: $text-color-main;
+      font-size: 1.5rem;
+    }
+  }
 
   .hamburger-btn {
     background: none;
@@ -38,11 +45,13 @@
     display: flex;
     padding: 0rem 0rem 0rem 0.3rem;
   }
-  a {
-    text-decoration: none;
-    color: $text-color-main;
-    font-weight: bold;
-    font-size: 1.75rem;
+  .menu-links {
+    a {
+      text-decoration: none;
+      color: $text-color-main;
+      font-weight: bold;
+      font-size: 1.75rem;
+    }
   }
   .menu-overlay {
     position: fixed;
