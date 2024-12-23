@@ -2,8 +2,11 @@
   "barnkalas": [
     {
       "imgHero": "../../pages/img/heroBarnkalas.png",
+      "imgAltHero": "ballons",
       "imgTextDesktop": "../../pages/img/heroText.png",
+      "imgAltDesktop": "barnkalas på Kino bio",
       "imgTextMobile": "../../pages/img/KINO.png",
+      "imgAltMobile": "Kino",
       "titelMobile": "Boka kalas idag!",
       "titelDesktop": "Boka barnkalas idag!",
       "book": "Boka barnkalas!",

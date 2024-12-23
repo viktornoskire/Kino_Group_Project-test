@@ -17,6 +17,7 @@ async function loadEvent() {
       const eventImg = document.createElement('img');
       eventImg.classList.add = 'party-img';
       eventImg.src = events.image;
+      eventImg.alt = events.imageAlt;
       eventDiv.append(eventImg);
       const eventHeader = document.createElement('h1');
       eventHeader.classList.add('party-header');
@@ -70,11 +71,13 @@ async function loadContent() {
       const contentHero = document.createElement('img');
       contentHero.classList.add = 'kids-hero';
       contentHero.src = content.imgHero;
+      contentHero.alt = content.imgAltHero;
       contentDiv.append(contentHero);
 
       const contentImg = document.createElement('img');
       contentImg.classList.add = 'kids-img';
       contentImg.src = content.imgTextMobile;
+      contentImg.alt = content.imgAltMobile;
       contentDiv.append(contentImg);
 
       const contentHeader = document.createElement('h2');
