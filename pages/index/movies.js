@@ -4,7 +4,6 @@ async function loadMovies() {
     throw new Error(`HTTP-error! Status: ${response.status}`);
   }
   const movies = await response.json();
-  console.log('Filmer:', movies);
 
   const movieContainer = document.querySelector('.movie-container');
   movies.forEach((movie) => {
@@ -24,6 +23,30 @@ async function loadMovies() {
     const movieGenre = document.createElement('p');
     movieGenre.textContent = movie.Genre;
     movieCard.appendChild(movieGenre);
+
+    const movieInfo = document.createElement('div');
+    movieInfo.classList.add('movie-info');
+    movieInfo.innerHTML = `
+    <p><strong>Titel:</strong> ${movie.Titel}</p>
+    <p><strong>Genre:</strong> ${movie.Genre}</p>
+    <p><strong>Handling:</strong> ${movie.Beskrivning}</p>
+    <p><strong>Skådespelare:</strong> ${movie.Skådespelare}</p>
+    <p><strong>Språk:</strong> ${movie.Språk}</p>
+    <p><strong>Rating:</strong> ${movie.Rating}</p>
+    <p><strong>Speltid:</strong> ${movie.Längd}</p>
+    <p><strong>Rek. ålder:</strong> ${movie.RekommenderadAlder}</p>
+    <p><strong>Status:</strong> ${movie.Label}</p>`;
+
+    movieInfo.style.display = 'none';
+    movieCard.appendChild(movieInfo);
+
+    movieTitle.addEventListener('click', () => {
+      if (movieInfo.style.display === 'none') {
+        movieInfo.style.display = 'block';
+      } else {
+        movieInfo.style.display = 'none';
+      }
+    });
   });
 }
 
