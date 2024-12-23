@@ -1,12 +1,12 @@
 //Getting the JSON file header.json and its data.
-export async function fetchHeaderData() {
+async function fetchHeaderData() {
   const response = await fetch('../../data/header.json');
   const headerData = await response.json();
   console.log(headerData);
   return headerData;
 }
 //This function uses the data and creates the elements for the header.
-export function createNavigation(headerData) {
+function createNavigation(headerData) {
   const navigationContainer = document.querySelector('#navigation-menu');
 
   //Creates a nav element
