@@ -22,7 +22,7 @@ function createNavigation(headerData) {
 
   const logo = document.createElement('img');
   logo.src = headerData.header.mainHeader.logo;
-  logo.alt = `Picture of ${headerData.header.mainHeader.brandName} logo`;
+  logo.alt = headerData.header.mainHeader.alt;
   logo.className = 'nav-logo';
 
   logoLink.appendChild(logo);
@@ -63,7 +63,7 @@ function createNavigation(headerData) {
 
   const overlayLogo = document.createElement('img');
   overlayLogo.src = headerData.header.hamburgerMenu.menuLogo;
-  overlayLogo.alt = `Picture of ${headerData.header.mainHeader.brandName} logo`;
+  overlayLogo.alt = headerData.header.mainHeader.alt;
   overlayLogo.className = 'overlay-logo';
 
   overlayLogoContainer.appendChild(overlayLogo);
@@ -93,7 +93,7 @@ function createNavigation(headerData) {
   });
 
   menuOverlay.appendChild(menuLinks);
-  //eventlistner for clicks on the hamburgermenu, this might change depending on styling down the line
+
   hamburgerBtn.addEventListener('click', () => {
     menuOverlay.style.display = 'block';
     overlayBlur.classList.add('active');
