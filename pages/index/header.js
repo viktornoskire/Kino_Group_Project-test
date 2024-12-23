@@ -53,6 +53,11 @@ function createNavigation(headerData) {
   const overlayLogoContainer = document.createElement('div');
   overlayLogoContainer.className = 'overlay-logo';
 
+  const closeBtn = document.createElement('button');
+  closeBtn.className = 'close-btn';
+  closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+  menuOverlay.appendChild(closeBtn);
+
   const overlayLogo = document.createElement('img');
   overlayLogo.src = headerData.header.hamburgerMenu.menuLogo;
   overlayLogo.alt = 'Kino Bio Logo';
@@ -87,7 +92,11 @@ function createNavigation(headerData) {
   menuOverlay.appendChild(menuLinks);
   //eventlistner for clicks on the hamburgermenu, this might change depending on styling down the line
   hamburgerBtn.addEventListener('click', () => {
-    menuOverlay.style.display = menuOverlay.style.display === 'none' ? 'block' : 'none';
+    menuOverlay.style.display = 'block';
+  });
+
+  closeBtn.addEventListener('click', () => {
+    menuOverlay.style.display = 'none';
   });
   //appending the different elements thats been created above.
   rightSection.appendChild(hamburgerBtn);
