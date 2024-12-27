@@ -11,8 +11,20 @@
     margin-left: -2.5rem;
   }
 
+  .footer-icon {
+    height: 2.5rem;
+  }
+
   a {
     color: $red-color;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    bottom: 0.8rem;
+  }
+
+  a:nth-child(4) {
+    margin-left: 0;
   }
 
   .footer-logo {
@@ -21,5 +33,9 @@
   }
   .footer-logotext {
     display: inline;
+    padding-left: 1rem;
+    font-size: 1.5rem;
+    position: relative;
+    bottom: 1rem;
   }
 }
