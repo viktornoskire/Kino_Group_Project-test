@@ -15,8 +15,11 @@ export async function buildDoc() {
     const headSection = data.sections[0];
     const title = document.querySelector('.cinema-title');
     const open = document.querySelector('.cinema-open');
+    const img = document.querySelector('.kino-img');
     title.innerText = headSection.title;
     open.innerText = headSection.text;
+    img.src = data.kinoImg.src;
+    img.alt = data.kinoImg.alt;
   }
   //
   const modalInfo = data.sections[1].modal;
@@ -42,8 +45,8 @@ export async function buildDoc() {
       question.innerText = section.title;
       answer.innerText = section.text;
       answer.style.display = 'none';
-      openBtn.src = data.buttons.openButton;
-      openBtn.alt = 'lorem ipsum';
+      openBtn.src = data.buttons[0].openButton;
+      openBtn.alt = data.buttons[0].alt;
       // Append to list
       list.appendChild(openBtn);
       list.appendChild(question);
@@ -51,10 +54,12 @@ export async function buildDoc() {
       openBtn.addEventListener('click', () => {
         openBtn.classList.toggle('open-button-clicked');
         if (openBtn.className === 'modal-open open-button-clicked') {
-          openBtn.src = data.buttons.closeButton;
+          openBtn.src = data.buttons[1].closeButton;
+          openBtn.alt = data.buttons[1].alt;
           answer.style.display = '';
         } else {
-          openBtn.src = data.buttons.openButton;
+          openBtn.src = data.buttons[0].openButton;
+          openBtn.alt = data.buttons[0].alt;
           answer.style.display = 'none';
         }
       });

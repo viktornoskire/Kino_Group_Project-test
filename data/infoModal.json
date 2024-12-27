@@ -1,10 +1,22 @@
 {
-  "kinoImg": "pages/img/kinoImg.png",
-  "buttons": {
-    "openButton": "../../pages/img/QnAOpen.png",
-    "closeButton": "../../pages/img/QnAClose.png",
-    "redButton": "Visas nu på biografen"
+  "kinoImg": {
+    "src": "../../pages/img/kinoImg.png",
+    "alt": ""
   },
+  "buttons": [
+    {
+      "openButton": "../../pages/img/QnAOpen.png",
+      "alt": ""
+    },
+    {
+      "closeButton": "../../pages/img/QnAClose.png",
+      "alt": ""
+    },
+    {
+      "redButton": "Visas nu på biografen",
+      "alt": ""
+    }
+  ],
   "sections": [
     {
       "title": "Kino Sandviken",
