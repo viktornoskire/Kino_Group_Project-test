@@ -1,16 +1,16 @@
 {
   "kinoImg": {
     "src": "../../pages/img/kinoImg.png",
-    "alt": ""
+    "alt": "Image with Kino logo"
   },
   "buttons": [
     {
       "openButton": "../../pages/img/QnAOpen.png",
-      "alt": ""
+      "alt": "Plus icon with circle around"
     },
     {
       "closeButton": "../../pages/img/QnAClose.png",
-      "alt": ""
+      "alt": "Minus icon with circle around"
     },
     {
       "redButton": "Visas nu på biografen",
