@@ -41,6 +41,7 @@
           const a = document.createElement('a');
           a.href = link.url;
           a.textContent = link.text || link.name;
+          a.classList.add('footer-a');
           li.append(a);
           ul.append(li);
         });
@@ -58,6 +59,7 @@
           const aFindUs = document.createElement('a');
           aFindUs.href = address.url;
           aFindUs.textContent = address.findUs;
+          aFindUs.classList.add('footer-afind');
           liFindUs.appendChild(aFindUs);
           ul.appendChild(liFindUs);
         });
