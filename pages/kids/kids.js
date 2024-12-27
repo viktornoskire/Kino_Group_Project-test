@@ -1,5 +1,3 @@
-loadEvent();
-
 async function loadEvent() {
   try {
     const responseEvent = await fetch('../../data/barnkalasEvent.json');
@@ -12,30 +10,38 @@ async function loadEvent() {
 
     dataEvent.kalas.forEach((events) => {
       const eventDiv = document.createElement('div');
-      eventDiv.classList.add = 'party-div';
+      eventDiv.classList.add('party-div');
       event.append(eventDiv);
+
       const eventImg = document.createElement('img');
-      eventImg.classList.add = 'party-img';
+      eventImg.classList.add('party-img');
       eventImg.src = events.image;
       eventImg.alt = events.imageAlt;
       eventDiv.append(eventImg);
-      const eventHeader = document.createElement('h1');
+
+      const eventStyling = document.createElement('div');
+      eventStyling.classList.add('party-styling');
+      eventDiv.append(eventStyling);
+
+      const eventHeader = document.createElement('h2');
       eventHeader.classList.add('party-header');
       eventHeader.innerText = events.titel;
-      eventDiv.append(eventHeader);
+      eventStyling.append(eventHeader);
+
       const eventText = document.createElement('p');
-      eventText.classList.add = 'party-text';
+      eventText.classList.add('party-text');
       eventText.innerText = events.description;
-      eventDiv.append(eventText);
+      eventStyling.append(eventText);
+
       const eventUl = document.createElement('ol');
-      eventUl.classList.add = 'party-list';
-      eventDiv.append(eventUl);
+      eventUl.classList.add('party-list');
+      eventStyling.append(eventUl);
 
       const content = events.content;
 
       content.forEach((list) => {
         const eventLi = document.createElement('li');
-        eventLi.classList.add = 'party-listItem';
+        eventLi.classList.add('party-listItem');
         eventLi.innerText = list;
         eventUl.append(eventLi);
       });
@@ -43,14 +49,12 @@ async function loadEvent() {
       const eventButton = document.createElement('button');
       eventButton.classList.add('party-button');
       eventButton.innerText = events.book;
-      eventDiv.append(eventButton);
+      eventStyling.append(eventButton);
     });
   } catch (error) {
     console.error(error);
   }
 }
-
-loadContent();
 
 async function loadContent() {
   try {
@@ -61,24 +65,26 @@ async function loadContent() {
     }
 
     const dataContent = await responseContent.json();
+
+    const contentMainHero = document.querySelector('.div-hero');
     const info = document.querySelector('.article-kids');
 
     dataContent.barnkalas.forEach((content) => {
-      const contentDiv = document.createElement('div');
-      contentDiv.classList.add = 'kids-div';
-      info.append(contentDiv);
-
       const contentHero = document.createElement('img');
-      contentHero.classList.add = 'kids-hero';
+      contentHero.classList.add('kids-hero');
       contentHero.src = content.imgHero;
       contentHero.alt = content.imgAltHero;
-      contentDiv.append(contentHero);
+      contentMainHero.append(contentHero);
 
       const contentImg = document.createElement('img');
-      contentImg.classList.add = 'kids-img';
+      contentImg.classList.add('kids-img');
       contentImg.src = content.imgTextMobile;
       contentImg.alt = content.imgAltMobile;
-      contentDiv.append(contentImg);
+      contentMainHero.append(contentImg);
+
+      const contentDiv = document.createElement('div');
+      contentDiv.classList.add('kids-div');
+      info.append(contentDiv);
 
       const contentHeader = document.createElement('h2');
       contentHeader.classList.add('kids-header');
@@ -86,7 +92,7 @@ async function loadContent() {
       contentDiv.append(contentHeader);
 
       const contentButton = document.createElement('button');
-      contentButton.classList.add('party-button');
+      contentButton.classList.add('kids-button');
       contentButton.innerText = content.book;
       contentDiv.append(contentButton);
 
@@ -96,11 +102,16 @@ async function loadContent() {
       contentDiv.append(contentMainHeader);
 
       const contentText = document.createElement('p');
-      contentText.classList.add = 'kids-text';
+      contentText.classList.add('kids-text');
       contentText.innerText = content.descriptionMobile;
       contentDiv.append(contentText);
     });
   } catch (error) {
     console.error(error);
   }
+}
+
+export async function loadkids() {
+  loadEvent();
+  loadContent();
 }
