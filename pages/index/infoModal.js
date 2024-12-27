@@ -23,6 +23,7 @@ export async function buildDoc() {
   }
   //
   const modalInfo = data.sections[1].modal;
+  let i = 0;
   modalInfo.forEach((section) => {
     // If there is no text key in section
     if (section.text == undefined) {
@@ -34,10 +35,13 @@ export async function buildDoc() {
       //
     } else {
       // Create elements
+      const listItem = document.createElement('li');
       const question = document.createElement('p');
       const answer = document.createElement('p');
       const openBtn = document.createElement('img');
       // Set class attribute to elements
+      listItem.setAttribute('class', 'modal-item-' + i);
+      i++;
       question.setAttribute('class', 'modal-question');
       answer.setAttribute('class', 'modal-answer');
       openBtn.setAttribute('class', 'modal-open');
@@ -48,10 +52,22 @@ export async function buildDoc() {
       openBtn.src = data.buttons[0].openButton;
       openBtn.alt = data.buttons[0].alt;
       // Append to list
-      list.appendChild(openBtn);
-      list.appendChild(question);
+      listItem.appendChild(openBtn);
+      listItem.appendChild(question);
       // Add event listener to img button
       openBtn.addEventListener('click', () => {
+        openBtn.classList.toggle('open-button-clicked');
+        if (openBtn.className === 'modal-open open-button-clicked') {
+          openBtn.src = data.buttons[1].closeButton;
+          openBtn.alt = data.buttons[1].alt;
+          answer.style.display = '';
+        } else {
+          openBtn.src = data.buttons[0].openButton;
+          openBtn.alt = data.buttons[0].alt;
+          answer.style.display = 'none';
+        }
+      });
+      question.addEventListener('click', () => {
         openBtn.classList.toggle('open-button-clicked');
         if (openBtn.className === 'modal-open open-button-clicked') {
           openBtn.src = data.buttons[1].closeButton;
@@ -82,12 +98,14 @@ export async function buildDoc() {
           activity.appendChild(date);
           activity.appendChild(time);
           answer.appendChild(activity);
-          list.appendChild(answer);
+          listItem.appendChild(answer);
+          list.appendChild(listItem);
         });
       }
       // Skip the whole open times elements and text if there is no 'open' key
       else {
-        list.appendChild(answer);
+        listItem.appendChild(answer);
+        list.appendChild(listItem);
       }
     }
   });

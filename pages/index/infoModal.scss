@@ -1,0 +1,47 @@
+@use '../src/lib.scss' as *;
+
+@mixin woop {
+  .modal-open {
+    grid-column: 1;
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+  }
+  .modal-question {
+    grid-column: 2;
+    margin: 0;
+  }
+  .modal-answer {
+    grid-column: 2;
+  }
+}
+
+.info-modal {
+  background-color: #2d2d2d;
+  border-radius: 15px;
+  margin: 10px;
+
+  .info-modal-list {
+    list-style-type: none;
+    display: grid;
+    grid-template-rows: auto auto auto;
+
+    .modal-item-0 {
+      grid-row: 1;
+      display: grid;
+      grid-template-columns: 3rem auto;
+      @include woop;
+    }
+    .modal-item-1 {
+      grid-row: 2;
+      display: grid;
+      grid-template-columns: 3rem auto;
+      @include woop;
+    }
+    .modal-item-2 {
+      grid-row: 3;
+      display: grid;
+      grid-template-columns: 3rem auto;
+      @include woop;
+    }
+  }
+}
