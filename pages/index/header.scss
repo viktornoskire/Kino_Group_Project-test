@@ -22,6 +22,11 @@
     display: flex;
     justify-content: flex-end;
     margin-right: 1rem;
+
+    @include breakpoint($screen-medium) {
+      justify-content: flex-start;
+      flex: 1;
+    }
   }
   a {
     text-decoration: none;
@@ -41,17 +46,41 @@
     .fa-bars {
       transform: scale(1.4, 1);
     }
+    @include breakpoint($screen-medium) {
+      display: none;
+    }
   }
   .nav-logo {
     display: flex;
     padding: 0rem 0rem 0rem 0.3rem;
   }
   .menu-links {
+    display: none;
     a {
       text-decoration: none;
       color: $text-color-main;
       font-weight: bold;
       font-size: 1.75rem;
+    }
+
+    @include breakpoint($screen-medium) {
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      align-items: center;
+      margin: 0;
+      justify-content: space-evenly;
+      width: 100%;
+      gap: 1rem;
+
+      a {
+        font-size: 1rem;
+        font-weight: 400;
+
+        &:hover {
+          color: $text-color-secondary;
+        }
+      }
     }
   }
   .menu-overlay {
