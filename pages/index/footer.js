@@ -2,7 +2,6 @@
   try {
     const response = await fetch('../../data/footer.json');
     const data = await response.json();
-    console.log(data);
     const footer = document.querySelector('.footer-container');
 
     const sectionsContainer = document.createElement('div');
