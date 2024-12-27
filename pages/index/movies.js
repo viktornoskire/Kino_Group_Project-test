@@ -11,22 +11,22 @@ async function loadMovies() {
   modal.classList.add('modal');
   modal.innerHTML = `
     <div class="modal-content">
-      <span class="close-btn class=fas fa-times">&times;</span>
+      <i class="close-button fas fa-times"></i>
       <div class="modal-body"></div>
     </div>
   `;
+
   document.body.appendChild(modal);
   console.log('modal created: ', modal);
 
   const modalBody = document.querySelector('.modal-body');
-  const closeModal = document.querySelector('.close-btn');
+  const closeModal = document.querySelector('.close-button');
 
   closeModal.addEventListener('click', () => {
     modal.style.display = 'none';
-    console.log('modal closed');
   });
 
-  window.addEventListener('click', () => {
+  window.addEventListener('click', (event) => {
     if (event.target === modal) {
       modal.style.display = 'none';
       console.log('modal closed by outside klick');
@@ -34,7 +34,6 @@ async function loadMovies() {
   });
 
   movies.forEach((movie) => {
-    console.log('Processing movie:', movie);
     const movieCard = document.createElement('div');
     movieCard.classList.add('movie-card');
     movieContainer.appendChild(movieCard);
@@ -52,9 +51,8 @@ async function loadMovies() {
     movieGenre.textContent = movie.Genre;
     movieCard.appendChild(movieGenre);
 
-    movieTitle.addEventListener('click', () => {
+    movieTitle.addEventListener('click', (event) => {
       event.stopPropagation();
-      console.log(`Title clicked: ${movie.Titel}`);
 
       modalBody.innerHTML = `
         <p><strong>Titel:</strong> ${movie.Titel}</p>
@@ -69,17 +67,6 @@ async function loadMovies() {
 
       modal.style.display = 'block';
     });
-
-    /*movieInfo.style.display = 'none';
-    movieCard.appendChild(movieInfo);
-
-    movieTitle.addEventListener('click', () => {
-      if (movieInfo.style.display === 'none') {
-        movieInfo.style.display = 'block';
-      } else {
-        movieInfo.style.display = 'none';
-      }
-    });*/
   });
 }
 
