@@ -1,7 +1,5 @@
 @use '../src/lib.scss' as *;
-html {
-  background-color: $background-color;
-}
+
 .movie-headline {
   max-width: 1280px;
   width: 100%;
