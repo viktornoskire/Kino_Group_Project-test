@@ -1,0 +1,13 @@
+@use '../src/lib.scss' as *;
+
+.footer-container {
+  background-color: #2d2d2d;
+
+  li {
+    list-style: none;
+  }
+
+  .footer-logo {
+    height: 3rem;
+  }
+}
