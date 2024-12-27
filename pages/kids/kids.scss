@@ -1,5 +1,121 @@
 @use '../src/lib.scss' as *;
 
-.test123 {
-  color: $text-color-secondary;
+.div-hero {
+  display: flex;
+  justify-content: center;
+
+  .kids-hero {
+    position: absolute;
+
+    @include breakpoint($screen-mini) {
+      width: 90%;
+    }
+  }
+
+  .kids-img {
+    position: relative;
+    margin-top: 3.75rem;
+    z-index: 999;
+
+    @include breakpoint($screen-mini) {
+      width: 50%;
+      margin-top: 12%;
+    }
+  }
+}
+
+.article-kids {
+  max-width: 480px;
+  margin: auto;
+
+  .kids-div {
+    color: $text-color-main;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+
+    .kids-header {
+      margin-top: 15%;
+      font-size: 1.5rem;
+    }
+
+    .kids-mainHeader {
+      font-size: 2.5rem;
+      font-weight: normal;
+      margin-top: 0.625rem;
+      margin-bottom: 0.625rem;
+    }
+
+    .kids-text {
+      font-size: 1.5rem;
+      margin-top: 0.626rem;
+      margin-bottom: 3.125rem;
+    }
+
+    .kids-button {
+      background-color: $red-color;
+      padding: 0.625rem 2.5rem;
+      border-radius: 1.5rem;
+      color: $text-color-main;
+      border-color: transparent;
+    }
+  }
+}
+
+.article-party {
+  max-width: 480px;
+  margin: auto;
+
+  .party-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 3.75rem;
+
+    .party-img {
+      z-index: 999;
+      max-width: 388px;
+
+      @include breakpoint($screen-mini) {
+        width: 85%;
+      }
+    }
+
+    .party-styling {
+      display: grid;
+      grid-template-columns: 1.25rem auto 1.25rem;
+      background-color: $text-color-main;
+      color: black;
+      padding-top: 5rem;
+      padding-bottom: 1.25rem;
+      border-radius: 1.8rem;
+      margin-top: -6.9rem;
+
+      .party-header {
+        grid-column: 2;
+        font-size: 2.25rem;
+        margin-bottom: 0;
+      }
+
+      .party-text {
+        grid-column: 2;
+        margin-bottom: 0.625rem;
+      }
+
+      .party-list {
+        grid-column: 2;
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
+
+      .party-button {
+        grid-column: 2;
+        justify-self: end;
+        background-color: $red-color;
+        padding: 0.625rem 2.5rem;
+        border-radius: 1.5rem;
+        color: $text-color-main;
+        border-color: transparent;
+      }
+    }
+  }
 }
