@@ -1,8 +1,8 @@
 {
   "kinoImg": "pages/img/kinoImg.png",
   "buttons": {
-    "openButton": "pages/img/QnAOpen.png",
-    "closeButton": "pages/img/QnAClose.png",
+    "openButton": "../../pages/img/QnAOpen.png",
+    "closeButton": "../../pages/img/QnAClose.png",
     "redButton": "Visas nu på biografen"
   },
   "sections": [

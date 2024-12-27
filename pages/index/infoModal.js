@@ -1,20 +1,20 @@
-export async function loadJSON() {
-  const response = await fetch('data/infoModal.json');
+async function loadJSON() {
+  const response = await fetch('../../data/infoModal.json');
   const data = await response.json();
   return data;
 }
 
-// DOM elements
-const title = document.querySelector('.cinema-title');
-const open = document.querySelector('.cinema-open');
-const modal = document.querySelector('.info-modal');
-const list = document.querySelector('.info-modal-list');
-
 export async function buildDoc() {
   const data = await loadJSON();
-  if (title && open) {
+  // DOM elements
+  const modal = document.querySelector('.info-modal');
+  const list = document.querySelector('.info-modal-list');
+
+  if (document.querySelector('.cinema-title')) {
     // Render text to headerSection where the main title is
     const headSection = data.sections[0];
+    const title = document.querySelector('.cinema-title');
+    const open = document.querySelector('.cinema-open');
     title.innerText = headSection.title;
     open.innerText = headSection.text;
   }
@@ -33,28 +33,28 @@ export async function buildDoc() {
       // Create elements
       const question = document.createElement('p');
       const answer = document.createElement('p');
-      const open = document.createElement('img');
+      const openBtn = document.createElement('img');
       // Set class attribute to elements
       question.setAttribute('class', 'modal-question');
       answer.setAttribute('class', 'modal-answer');
-      open.setAttribute('class', 'modal-open');
+      openBtn.setAttribute('class', 'modal-open');
       // Use JSON data to render text to elements
       question.innerText = section.title;
       answer.innerText = section.text;
       answer.style.display = 'none';
-      open.src = data.buttons.openButton;
-      open.alt = 'lorem ipsum';
+      openBtn.src = data.buttons.openButton;
+      openBtn.alt = 'lorem ipsum';
       // Append to list
-      list.appendChild(open);
+      list.appendChild(openBtn);
       list.appendChild(question);
       // Add event listener to img button
-      open.addEventListener('click', () => {
-        open.classList.toggle('open-button-clicked');
-        if (open.className === 'modal-open open-button-clicked') {
-          open.src = data.buttons.closeButton;
+      openBtn.addEventListener('click', () => {
+        openBtn.classList.toggle('open-button-clicked');
+        if (openBtn.className === 'modal-open open-button-clicked') {
+          openBtn.src = data.buttons.closeButton;
           answer.style.display = '';
         } else {
-          open.src = data.buttons.openButton;
+          openBtn.src = data.buttons.openButton;
           answer.style.display = 'none';
         }
       });
