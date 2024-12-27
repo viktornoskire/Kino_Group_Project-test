@@ -1,11 +1,12 @@
 @use '../src/lib.scss' as *;
-
+html {
+  background-color: $background-color;
+}
 .movie-headline {
   max-width: 1280px;
   width: 100%;
   background-color: $background-color;
-  margin: 0;
-  padding-left: 10px;
+  margin: 0 auto;
   font-size: 1.3rem;
   color: $text-color-main;
   font-weight: 400;
@@ -15,10 +16,10 @@
   background-color: $background-color;
   color: $text-color-main;
   display: grid;
-  //gap: 20px; //ändra till rem
-  grid-template-columns: 1fr;
+  gap: 10px; //ändra till rem
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto;
   .movie-card {
-    margin: 5px;
     img {
       max-width: 100%;
       height: auto;
@@ -42,7 +43,7 @@
 
 @media screen and (min-width: 500px) {
   .movie-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     //gap: 20px; //ändra till rem
   }
 }
