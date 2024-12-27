@@ -13,3 +13,9 @@ $screen-medium: 1000px;
     @content;
   }
 }
+
+@mixin breakpointMinWidth($min-width) {
+  @media screen and (min-width: $min-width) {
+    @content;
+  }
+}
