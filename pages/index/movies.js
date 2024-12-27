@@ -6,7 +6,35 @@ async function loadMovies() {
   const movies = await response.json();
 
   const movieContainer = document.querySelector('.movie-container');
+
+  const modal = document.createElement('div');
+  modal.classList.add('modal');
+  modal.innerHTML = `
+    <div class="modal-content">
+      <span class="close-btn class=fas fa-times">&times;</span>
+      <div class="modal-body"></div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+  console.log('modal created: ', modal);
+
+  const modalBody = document.querySelector('.modal-body');
+  const closeModal = document.querySelector('.close-btn');
+
+  closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+    console.log('modal closed');
+  });
+
+  window.addEventListener('click', () => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+      console.log('modal closed by outside klick');
+    }
+  });
+
   movies.forEach((movie) => {
+    console.log('Processing movie:', movie);
     const movieCard = document.createElement('div');
     movieCard.classList.add('movie-card');
     movieContainer.appendChild(movieCard);
@@ -24,20 +52,25 @@ async function loadMovies() {
     movieGenre.textContent = movie.Genre;
     movieCard.appendChild(movieGenre);
 
-    const movieInfo = document.createElement('div');
-    movieInfo.classList.add('movie-info');
-    movieInfo.innerHTML = `
-    <p><strong>Titel:</strong> ${movie.Titel}</p>
-    <p><strong>Genre:</strong> ${movie.Genre}</p>
-    <p><strong>Handling:</strong> ${movie.Beskrivning}</p>
-    <p><strong>Skådespelare:</strong> ${movie.Skådespelare}</p>
-    <p><strong>Språk:</strong> ${movie.Språk}</p>
-    <p><strong>Rating:</strong> ${movie.Rating}</p>
-    <p><strong>Speltid:</strong> ${movie.Längd}</p>
-    <p><strong>Rek. ålder:</strong> ${movie.RekommenderadAlder}</p>
-    <p><strong>Status:</strong> ${movie.Label}</p>`;
+    movieTitle.addEventListener('click', () => {
+      event.stopPropagation();
+      console.log(`Title clicked: ${movie.Titel}`);
 
-    movieInfo.style.display = 'none';
+      modalBody.innerHTML = `
+        <p><strong>Titel:</strong> ${movie.Titel}</p>
+        <p><strong>Genre:</strong> ${movie.Genre}</p>
+        <p><strong>Handling:</strong> ${movie.Beskrivning}</p>
+        <p><strong>Skådespelare:</strong> ${movie.Skådespelare}</p>
+        <p><strong>Språk:</strong> ${movie.Språk}</p>
+        <p><strong>Rating:</strong> ${movie.Rating}</p>
+        <p><strong>Speltid:</strong> ${movie.Längd}</p>
+        <p><strong>Rek. ålder:</strong> ${movie.RekommenderadAlder}</p>
+        <p><strong>Status:</strong> ${movie.Label}</p>`;
+
+      modal.style.display = 'block';
+    });
+
+    /*movieInfo.style.display = 'none';
     movieCard.appendChild(movieInfo);
 
     movieTitle.addEventListener('click', () => {
@@ -46,7 +79,7 @@ async function loadMovies() {
       } else {
         movieInfo.style.display = 'none';
       }
-    });
+    });*/
   });
 }
 
