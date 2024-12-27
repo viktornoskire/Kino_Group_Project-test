@@ -1,13 +1,25 @@
 @use '../src/lib.scss' as *;
 
 .footer-container {
-  background-color: #2d2d2d;
+  background-color: $background-div-color;
+  border-radius: 2rem;
+  padding: 2rem;
+  margin: 0.6rem;
 
   li {
     list-style: none;
+    margin-left: -2.5rem;
+  }
+
+  a {
+    color: $red-color;
   }
 
   .footer-logo {
     height: 3rem;
+    display: inline;
+  }
+  .footer-logotext {
+    display: inline;
   }
 }
