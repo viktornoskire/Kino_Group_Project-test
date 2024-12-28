@@ -6,6 +6,31 @@ async function loadMovies() {
   const movies = await response.json();
 
   const movieContainer = document.querySelector('.movie-container');
+
+  const modal = document.createElement('div');
+  modal.classList.add('modal');
+  modal.innerHTML = `
+    <div class="modal-content">
+      <i class="close-button fas fa-times"></i>
+      <div class="modal-body"></div>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+
+  const modalBody = document.querySelector('.modal-body');
+  const closeModal = document.querySelector('.close-button');
+
+  closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+
   movies.forEach((movie) => {
     const movieCard = document.createElement('div');
     movieCard.classList.add('movie-card');
@@ -24,28 +49,21 @@ async function loadMovies() {
     movieGenre.textContent = movie.Genre;
     movieCard.appendChild(movieGenre);
 
-    const movieInfo = document.createElement('div');
-    movieInfo.classList.add('movie-info');
-    movieInfo.innerHTML = `
-    <p><strong>Titel:</strong> ${movie.Titel}</p>
-    <p><strong>Genre:</strong> ${movie.Genre}</p>
-    <p><strong>Handling:</strong> ${movie.Beskrivning}</p>
-    <p><strong>Skådespelare:</strong> ${movie.Skådespelare}</p>
-    <p><strong>Språk:</strong> ${movie.Språk}</p>
-    <p><strong>Rating:</strong> ${movie.Rating}</p>
-    <p><strong>Speltid:</strong> ${movie.Längd}</p>
-    <p><strong>Rek. ålder:</strong> ${movie.RekommenderadAlder}</p>
-    <p><strong>Status:</strong> ${movie.Label}</p>`;
+    movieTitle.addEventListener('click', (event) => {
+      event.stopPropagation();
 
-    movieInfo.style.display = 'none';
-    movieCard.appendChild(movieInfo);
+      modalBody.innerHTML = `
+        <p><strong>Titel:</strong> ${movie.Titel}</p>
+        <p><strong>Genre:</strong> ${movie.Genre}</p>
+        <p><strong>Handling:</strong> ${movie.Beskrivning}</p>
+        <p><strong>Skådespelare:</strong> ${movie.Skådespelare}</p>
+        <p><strong>Språk:</strong> ${movie.Språk}</p>
+        <p><strong>Rating:</strong> ${movie.Rating}</p>
+        <p><strong>Speltid:</strong> ${movie.Längd}</p>
+        <p><strong>Rek. ålder:</strong> ${movie.RekommenderadAlder}</p>
+        <p><strong>Status:</strong> ${movie.Label}</p>`;
 
-    movieTitle.addEventListener('click', () => {
-      if (movieInfo.style.display === 'none') {
-        movieInfo.style.display = 'block';
-      } else {
-        movieInfo.style.display = 'none';
-      }
+      modal.style.display = 'block';
     });
   });
 }
