@@ -2,7 +2,6 @@
 
 .movie-headline {
   max-width: 1280px;
-  width: 100%;
   background-color: $background-color;
   margin: 0 auto;
   padding: 0 1rem;
@@ -52,17 +51,19 @@
   overflow: auto;
   backdrop-filter: blur(2px);
   background-color: rgba(0, 0, 0, 0.5);
-  transition: opacity 0.2s ease-in;
 }
 
 .modal-content {
   background-color: $red-color;
-  margin: 10% auto;
   padding: 1.5rem;
   width: 80%;
   max-width: 600px;
   border: 1rem;
   border-radius: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .close-button {

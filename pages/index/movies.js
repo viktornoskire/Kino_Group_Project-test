@@ -29,7 +29,6 @@ async function loadMovies() {
   window.addEventListener('click', (event) => {
     if (event.target === modal) {
       modal.style.display = 'none';
-      console.log('modal closed by outside klick');
     }
   });
 
