@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Page Title</title>
+    <title>Kino Sandviken</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.scss" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,7 +20,13 @@
       <div id="navigation-menu"></div>
     </header>
     <main>
-      <h1 class="movie-headline"></h1>
+      <h1 class="cinema-title"></h1>
+      <p class="cinema-open"></p>
+      <div class="info-modal">
+        <ul class="info-modal-list"></ul>
+      </div>
+      <img class="kino-img" />
+      <h2 class="movie-headline"></h2>
       <div class="movie-container"></div>
     </main>
 
@@ -28,7 +34,7 @@
 
     <script type="module" src="main.js"></script>
     <script type="module" src="pages/index/movies.js"></script>
-    <script type="module" src="footer.js"></script>
+    <script type="module" src="./pages/index/footer.js"></script>
     <script type="module" src="./pages/index/header.js"></script>
     <script type="module" src="./pages/index/infoModal.js"></script>
   </body>
