@@ -17,7 +17,6 @@ async function loadMovies() {
   `;
 
   document.body.appendChild(modal);
-  console.log('modal created: ', modal);
 
   const modalBody = document.querySelector('.modal-body');
   const closeModal = document.querySelector('.close-button');
