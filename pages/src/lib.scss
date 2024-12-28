@@ -6,7 +6,7 @@ $background-div-color: #2d2d2d;
 $text-color-main: #f6f6f6;
 $text-color-secondary: #a8a8a8;
 $screen-mini: 500px;
-$screen-medium: 1000px;
+$screen-medium: 1280px;
 
 @mixin breakpoint($max-width) {
   @media screen and (max-width: $max-width) {
