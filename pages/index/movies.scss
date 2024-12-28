@@ -5,8 +5,8 @@
   width: 100%;
   background-color: $background-color;
   margin: 0 auto;
-  padding: 0 10px;
-  font-size: 1.3rem;
+  padding: 0 1rem;
+  font-size: 1rem;
   color: $text-color-main;
   font-weight: 400;
 }
@@ -15,9 +15,9 @@
   background-color: $background-color;
   color: $text-color-main;
   display: grid;
-  gap: 10px;
+  gap: 0.8rem;
   grid-template-columns: repeat(2, 1fr);
-  padding: 0 10px;
+  padding: 0 0.8rem;
   margin: 0 auto;
   .movie-card {
     img {
@@ -58,7 +58,7 @@
 .modal-content {
   background-color: $red-color;
   margin: 10% auto;
-  padding: 20px;
+  padding: 1.5rem;
   width: 80%;
   max-width: 600px;
   border: 1rem;
@@ -74,6 +74,9 @@
 }
 
 @media screen and (min-width: 500px) {
+  .movie-headline {
+    font-size: 1.3rem;
+  }
   .movie-container {
     grid-template-columns: repeat(3, 1fr);
   }
