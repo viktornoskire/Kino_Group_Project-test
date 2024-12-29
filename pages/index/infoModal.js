@@ -87,7 +87,7 @@ export async function buildDoc() {
           const date = document.createElement('p');
           const time = document.createElement('p');
           const activity = document.createElement('div');
-          activity.setAttribute('class', `open-${i.datum}`);
+          activity.setAttribute('class', `open-times`);
           day.setAttribute('class', 'open-times-day');
           date.setAttribute('class', 'open-times-date');
           time.setAttribute('class', 'open-times-time');
