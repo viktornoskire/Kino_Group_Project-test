@@ -109,6 +109,7 @@ function createNavigation(headerData) {
     overlayBlur.classList.remove('active');
   });
   //appending the different elements thats been created above.
+  rightSection.appendChild(menuLinks.cloneNode(true));
   rightSection.appendChild(hamburgerBtn);
   nav.appendChild(leftSection);
   nav.appendChild(rightSection);
