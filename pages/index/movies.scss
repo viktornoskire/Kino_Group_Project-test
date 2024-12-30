@@ -1,6 +1,7 @@
 @use '../src/lib.scss' as *;
 
 .movie-headline {
+  max-width: 1280px;
   background-color: $background-color;
   margin: 0 auto;
   padding: 0 1rem;
@@ -9,6 +10,7 @@
   font-weight: 400;
 }
 .movie-container {
+  max-width: 1280px;
   background-color: $background-color;
   color: $text-color-main;
   display: grid;
