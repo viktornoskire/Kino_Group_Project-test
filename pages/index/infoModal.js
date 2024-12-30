@@ -9,6 +9,7 @@ export async function buildDoc() {
   // DOM elements
   const modal = document.querySelector('.info-modal');
   const list = document.querySelector('.info-modal-list');
+  const info = document.querySelector('.info');
 
   if (document.querySelector('.cinema-title')) {
     // Render text to headerSection where the main title is
@@ -16,10 +17,40 @@ export async function buildDoc() {
     const title = document.querySelector('.cinema-title');
     const open = document.querySelector('.cinema-open');
     const img = document.querySelector('.kino-img');
+    const info2 = document.querySelector('.info-2');
     title.innerText = headSection.title;
     open.innerText = headSection.text;
     img.src = data.kinoImg.src;
     img.alt = data.kinoImg.alt;
+    const openSection = data.sections[1].modal;
+    const openTimes = openSection[3].open;
+    const openTitle = document.createElement('h2');
+    const openPara = document.createElement('p');
+    openTitle.innerText = openSection[3].title;
+    openPara.innerText = openSection[3].text;
+    const openTimeDiv = document.createElement('div');
+    openTimeDiv.appendChild(openTitle);
+    openTimeDiv.appendChild(openPara);
+    openTimeDiv.setAttribute('class', 'open-div');
+    openTimes.forEach((i) => {
+      const activity = document.createElement('div');
+      const day = document.createElement('p');
+      const date = document.createElement('p');
+      const time = document.createElement('p');
+      activity.setAttribute('class', `open-times`);
+      day.setAttribute('class', 'open-times-day');
+      date.setAttribute('class', 'open-times-date');
+      time.setAttribute('class', 'open-times-time');
+      day.innerText = i.dag;
+      date.innerText = i.datum;
+      time.innerText = i.tid;
+      activity.appendChild(day);
+      activity.appendChild(date);
+      activity.appendChild(time);
+      openTimeDiv.appendChild(activity);
+    });
+    info2.prepend(openTimeDiv);
+    info.appendChild(info2);
   }
   //
   const modalInfo = data.sections[1].modal;
