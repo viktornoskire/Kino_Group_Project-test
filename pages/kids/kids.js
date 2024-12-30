@@ -1,3 +1,7 @@
+import { info } from 'sass';
+
+const screenWidth = screen.width;
+
 async function loadEvent() {
   try {
     const responseEvent = await fetch('../../data/barnkalasEvent.json');
@@ -72,13 +76,21 @@ async function loadContent() {
     dataContent.barnkalas.forEach((content) => {
       const contentHero = document.createElement('img');
       contentHero.classList.add('kids-hero');
-      contentHero.src = content.imgHero;
+      if (screenWidth < 1280) {
+        contentHero.src = content.imgHero;
+      } else {
+        contentHero.src = content.imgHeroDesktop;
+      }
       contentHero.alt = content.imgAltHero;
       contentMainHero.append(contentHero);
 
       const contentImg = document.createElement('img');
       contentImg.classList.add('kids-img');
-      contentImg.src = content.imgTextMobile;
+      if (screenWidth < 1280) {
+        contentImg.src = content.imgTextMobile;
+      } else {
+        contentImg.src = content.imgTextDesktop;
+      }
       contentImg.alt = content.imgAltMobile;
       contentMainHero.append(contentImg);
 
@@ -88,28 +100,46 @@ async function loadContent() {
 
       const contentHeader = document.createElement('h2');
       contentHeader.classList.add('kids-header');
-      contentHeader.innerText = content.titelMobile;
+      if (screenWidth < 1280) {
+        contentHeader.innerText = content.titelMobile;
+      } else {
+        contentHeader.innerText = content.titelDesktop;
+      }
       contentDiv.append(contentHeader);
 
       const contentButton = document.createElement('button');
       contentButton.classList.add('kids-button');
       contentButton.innerText = content.book;
+      contentButton.type = 'button';
       contentDiv.append(contentButton);
 
       const contentMainHeader = document.createElement('h1');
       contentMainHeader.classList.add('kids-mainHeader');
-      contentMainHeader.innerText = content.mainTitelMobile;
+      if (screenWidth < 1280) {
+        contentMainHeader.innerText = content.mainTitelMobile;
+      } else {
+        contentMainHeader.style.display = 'none';
+      }
       contentDiv.append(contentMainHeader);
 
       const contentText = document.createElement('p');
       contentText.classList.add('kids-text');
-      contentText.innerText = content.descriptionMobile;
+      if (screenWidth < 1280) {
+        contentText.innerText = content.descriptionMobile;
+      } else {
+        contentText.innerText = content.descriptionDesktop;
+      }
+
       contentDiv.append(contentText);
     });
   } catch (error) {
     console.error(error);
   }
 }
+
+window.addEventListener('resize', () => {
+  window.location.reload();
+});
 
 export async function loadkids() {
   loadEvent();
