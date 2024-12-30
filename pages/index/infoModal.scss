@@ -1,28 +1,5 @@
 @use '../src/lib.scss' as *;
 
-@mixin listItemStyle {
-  display: grid;
-  grid-template-columns: 2.5rem auto;
-  align-items: center;
-  max-width: 95%;
-  .modal-open {
-    grid-column: 1;
-    margin-top: 0.4rem;
-    margin-bottom: 0.4rem;
-  }
-  .modal-question {
-    grid-column: 2;
-    margin: 0;
-  }
-  .modal-answer {
-    grid-column: 1/3;
-    margin: 0.2rem 1rem 1rem 0;
-    font-size: 0.8em;
-    border-bottom: 3px solid rgba(128, 128, 128, 0.3);
-    padding-bottom: 1em;
-  }
-}
-
 .info-modal {
   background-color: $background-div-color;
   border-radius: 15px;
@@ -46,27 +23,33 @@
       grid-row: 1;
       @include listItemStyle;
     }
+    .modal-item-0:hover {
+      cursor: pointer;
+    }
     .modal-item-1 {
       grid-row: 2;
       @include listItemStyle;
     }
+    .modal-item-1:hover {
+      cursor: pointer;
+    }
     .modal-item-2 {
       grid-row: 3;
       @include listItemStyle;
-      @include breakpointMinWidth(1000px) {
-        display: none;
-      }
 
       .modal-answer {
         color: $text-color-secondary;
       }
 
       .open-times {
-        @include woop;
+        @include dateStyling;
         @media screen and (min-width: $screen-mini) {
           max-width: 400px;
         }
       }
+    }
+    .modal-item-2:hover {
+      cursor: pointer;
     }
   }
 }
