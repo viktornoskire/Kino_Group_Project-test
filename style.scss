@@ -3,6 +3,9 @@
 @use './pages/kids/kids.scss';
 @use './pages/about/about.scss';
 @use './pages/index/header.scss';
+@use './pages/index/infoModal.scss';
+@use './pages/index/footer.scss';
+@use './pages/index/movies.scss';
 
 * {
   font-family: 'Poppins', sans-serif;
@@ -15,4 +18,6 @@ html {
 body {
   padding: 0;
   margin: 0;
+  max-width: $screen-max;
+  margin: auto;
 }
