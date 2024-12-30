@@ -1,5 +1,3 @@
-import { info } from 'sass';
-
 const screenWidth = screen.width;
 
 async function loadEvent() {

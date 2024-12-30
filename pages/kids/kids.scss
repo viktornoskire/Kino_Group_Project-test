@@ -21,7 +21,8 @@
       width: 50%;
       margin-top: 12%;
     }
-    @media screen and (min-width: $screen-medium) {
+
+    @include breakpointMinWidth($screen-medium) {
       margin-top: 8%;
     }
   }
@@ -31,7 +32,7 @@
   max-width: 480px;
   margin: auto;
 
-  @media screen and (min-width: $screen-medium) {
+  @include breakpointMinWidth($screen-medium) {
     max-width: 1280px;
   }
 
@@ -44,7 +45,7 @@
       margin-top: 15%;
       font-size: 1.5rem;
 
-      @media screen and (min-width: $screen-medium) {
+      @include breakpointMinWidth($screen-medium) {
         font-size: 2.5rem;
         font-weight: normal;
       }
@@ -62,7 +63,7 @@
       margin-top: 0.626rem;
       margin-bottom: 3.125rem;
 
-      @media screen and (min-width: $screen-medium) {
+      @include breakpointMinWidth($screen-medium) {
         font-size: 2rem;
         margin-top: 2rem;
         margin-bottom: 4rem;
@@ -76,7 +77,7 @@
       color: $text-color-main;
       border-color: transparent;
 
-      @media screen and (min-width: $screen-medium) {
+      @include breakpointMinWidth($screen-medium) {
         font-size: 1.25rem;
       }
     }
@@ -89,7 +90,7 @@
 
   justify-content: center;
 
-  @media screen and (min-width: $screen-medium) {
+  @include breakpointMinWidth($screen-medium) {
     display: flex;
     max-width: 1280px;
   }
@@ -99,9 +100,9 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 3.75rem;
-    padding: 20px;
+    padding: 1.25rem;
 
-    @media screen and (min-width: $screen-medium) {
+    @include breakpointMinWidth($screen-medium) {
       max-width: 550px;
     }
 
@@ -113,9 +114,8 @@
         width: 85%;
       }
 
-      @media screen and (min-width: $screen-medium) {
+      @include breakpointMinWidth($screen-medium) {
         max-width: 100%;
-        max-height: 272px;
       }
     }
 
@@ -129,7 +129,7 @@
       border-radius: 1.8rem;
       margin-top: -7.8rem;
 
-      @media screen and (min-width: $screen-medium) {
+      @include breakpointMinWidth($screen-medium) {
         height: 500px;
         grid-template-rows: max-content;
       }
@@ -137,9 +137,10 @@
       .party-header {
         grid-column: 2;
         font-size: 2.25rem;
+        margin-top: 3rem;
         margin-bottom: 0;
 
-        @media screen and (min-width: $screen-medium) {
+        @include breakpointMinWidth($screen-medium) {
           margin-top: 3rem;
         }
       }
@@ -164,7 +165,7 @@
         color: $text-color-main;
         border-color: transparent;
 
-        @media screen and (min-width: $screen-medium) {
+        @include breakpointMinWidth($screen-medium) {
           font-size: 1.25rem;
           align-self: flex-end;
         }
