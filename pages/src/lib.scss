@@ -20,3 +20,26 @@ $screen-max: 1500px;
     @content;
   }
 }
+
+@mixin woop {
+  display: grid;
+  grid-template-columns: 30% 30% 40%;
+  .open-times-day,
+  .open-times-date,
+  .open-times-time {
+    margin: 0.3rem;
+    color: $text-color-main;
+  }
+  .open-times-day {
+    grid-template-columns: 1;
+  }
+  .open-times-date {
+    grid-template-columns: 2;
+    justify-content: flex-start;
+  }
+  .open-times-time {
+    grid-template-columns: 3;
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+}

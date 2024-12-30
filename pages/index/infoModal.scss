@@ -24,7 +24,7 @@
 }
 
 .info-modal {
-  background-color: #2d2d2d;
+  background-color: $background-div-color;
   border-radius: 15px;
   margin: 1rem;
 
@@ -53,33 +53,17 @@
     .modal-item-2 {
       grid-row: 3;
       @include listItemStyle;
+      @include breakpointMinWidth(1000px) {
+        display: none;
+      }
 
       .modal-answer {
-        color: #a8a8a8;
+        color: $text-color-secondary;
       }
 
       .open-times {
-        display: grid;
-        grid-template-columns: 30% 30% 40%;
-        .open-times-day,
-        .open-times-date,
-        .open-times-time {
-          margin: 0.3rem;
-          color: #f6f6f6;
-        }
-        .open-times-day {
-          grid-template-columns: 1;
-        }
-        .open-times-date {
-          grid-template-columns: 2;
-          justify-content: flex-start;
-        }
-        .open-times-time {
-          grid-template-columns: 3;
-          justify-content: flex-end;
-          margin-left: auto;
-        }
-        @media screen and (min-width: 500px) {
+        @include woop;
+        @media screen and (min-width: $screen-mini) {
           max-width: 400px;
         }
       }
