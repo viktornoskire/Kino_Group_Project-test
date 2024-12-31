@@ -21,12 +21,20 @@
       width: 50%;
       margin-top: 12%;
     }
+
+    @include breakpointMinWidth($screen-medium) {
+      margin-top: 8%;
+    }
   }
 }
 
 .article-kids {
   max-width: 480px;
   margin: auto;
+
+  @include breakpointMinWidth($screen-medium) {
+    max-width: 1280px;
+  }
 
   .kids-div {
     color: $text-color-main;
@@ -36,6 +44,11 @@
     .kids-header {
       margin-top: 15%;
       font-size: 1.5rem;
+
+      @include breakpointMinWidth($screen-medium) {
+        font-size: 2.5rem;
+        font-weight: normal;
+      }
     }
 
     .kids-mainHeader {
@@ -49,6 +62,12 @@
       font-size: 1.5rem;
       margin-top: 0.626rem;
       margin-bottom: 3.125rem;
+
+      @include breakpointMinWidth($screen-medium) {
+        font-size: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+      }
     }
 
     .kids-button {
@@ -57,6 +76,10 @@
       border-radius: 1.5rem;
       color: $text-color-main;
       border-color: transparent;
+
+      @include breakpointMinWidth($screen-medium) {
+        font-size: 1.25rem;
+      }
     }
   }
 }
@@ -65,11 +88,23 @@
   max-width: 480px;
   margin: auto;
 
+  justify-content: center;
+
+  @include breakpointMinWidth($screen-medium) {
+    display: flex;
+    max-width: 1280px;
+  }
+
   .party-div {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 3.75rem;
+    padding: 1.25rem;
+
+    @include breakpointMinWidth($screen-medium) {
+      max-width: 550px;
+    }
 
     .party-img {
       z-index: 999;
@@ -77,6 +112,10 @@
 
       @include breakpoint($screen-mini) {
         width: 85%;
+      }
+
+      @include breakpointMinWidth($screen-medium) {
+        max-width: 100%;
       }
     }
 
@@ -88,12 +127,22 @@
       padding-top: 5rem;
       padding-bottom: 1.25rem;
       border-radius: 1.8rem;
-      margin-top: -6.9rem;
+      margin-top: -7.8rem;
+
+      @include breakpointMinWidth($screen-medium) {
+        height: 500px;
+        grid-template-rows: max-content;
+      }
 
       .party-header {
         grid-column: 2;
         font-size: 2.25rem;
+        margin-top: 3rem;
         margin-bottom: 0;
+
+        @include breakpointMinWidth($screen-medium) {
+          margin-top: 3rem;
+        }
       }
 
       .party-text {
@@ -115,6 +164,11 @@
         border-radius: 1.5rem;
         color: $text-color-main;
         border-color: transparent;
+
+        @include breakpointMinWidth($screen-medium) {
+          font-size: 1.25rem;
+          align-self: flex-end;
+        }
       }
     }
   }
