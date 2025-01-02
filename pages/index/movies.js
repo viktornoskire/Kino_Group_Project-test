@@ -74,7 +74,6 @@ async function loadHeadline() {
     throw new Error(`HTTP-error! Status: ${response.status}`);
   }
   const data = await response.json();
-  console.log('Headline data:', data);
 
   const headerElement = document.querySelector('.movie-headline');
   headerElement.textContent = data.HeadlineText;
