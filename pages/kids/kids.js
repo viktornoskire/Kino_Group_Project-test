@@ -135,10 +135,6 @@ async function loadContent() {
   }
 }
 
-window.addEventListener('resize', () => {
-  window.location.reload();
-});
-
 export async function loadkids() {
   loadEvent();
   loadContent();
