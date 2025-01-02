@@ -9,17 +9,53 @@ export async function buildDoc() {
   // DOM elements
   const modal = document.querySelector('.info-modal');
   const list = document.querySelector('.info-modal-list');
+  const info = document.querySelector('.info');
 
-  if (document.querySelector('.cinema-title')) {
+  if (info) {
     // Render text to headerSection where the main title is
     const headSection = data.sections[0];
     const title = document.querySelector('.cinema-title');
     const open = document.querySelector('.cinema-open');
-    const img = document.querySelector('.kino-img');
+    const redButton = document.createElement('button');
+    redButton.innerText = data.buttons[2].text;
     title.innerText = headSection.title;
     open.innerText = headSection.text;
+    //
+    const img = document.querySelector('.kino-img');
+    const info2 = document.querySelector('.info-2');
+    const openSection = data.sections[1].modal;
+    const openTimes = openSection[3].open;
+    const openTitle = document.createElement('h3');
+    const openPara = document.createElement('p');
+    openTitle.innerText = openSection[3].title;
+    openPara.innerText = openSection[3].text;
     img.src = data.kinoImg.src;
     img.alt = data.kinoImg.alt;
+    const openTimeDiv = document.createElement('div');
+    openTimeDiv.appendChild(openTitle);
+    openTimeDiv.appendChild(openPara);
+    openTimeDiv.setAttribute('class', 'open-div');
+    openTitle.setAttribute('class', 'desktop-open-title');
+    openPara.setAttribute('class', 'desktop-open-paragraph');
+    openTimes.forEach((i) => {
+      const activity = document.createElement('div');
+      const day = document.createElement('p');
+      const date = document.createElement('p');
+      const time = document.createElement('p');
+      activity.setAttribute('class', `open-times`);
+      day.setAttribute('class', 'open-times-day');
+      date.setAttribute('class', 'open-times-date');
+      time.setAttribute('class', 'open-times-time');
+      day.innerText = i.dag;
+      date.innerText = i.datum;
+      time.innerText = i.tid;
+      activity.appendChild(day);
+      activity.appendChild(date);
+      activity.appendChild(time);
+      openTimeDiv.appendChild(activity);
+    });
+    info2.prepend(openTimeDiv);
+    info.appendChild(info2);
   }
   //
   const modalInfo = data.sections[1].modal;
