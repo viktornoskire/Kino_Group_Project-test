@@ -44,3 +44,35 @@
   padding-left: 0.5rem;
   font-size: 1.2rem;
 }
+
+@include breakpointMinWidth($screen-medium) {
+  .about-page {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 2rem;
+  }
+
+  .about-main-header,
+  .about-header {
+    grid-column: span 2;
+  }
+
+  .about-main-header {
+    height: 15rem;
+    font-size: 6rem;
+  }
+
+  .about-section {
+    margin: 0 1rem;
+    padding: 2rem;
+  }
+
+  .about-header {
+    font-size: 1.5rem;
+  }
+
+  .about-section h3 {
+    font-size: 1.75rem;
+  }
+}
